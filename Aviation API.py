@@ -87,6 +87,7 @@ class aviation_data:
         return airport_info
 
     def __str__(self) -> str:
+        # prints the data
         return str(self._data)
 
 
@@ -110,8 +111,8 @@ class aviation_data:
         P_inverse = P**-1
         return P, J, P_inverse
 
-    def connections_bool(self, dep: int, arr: int, layover: int) -> bool:
-        # Returns False if there are no flights from dep airport
+    def connections_bool(self, dep: int, arr: int, layover: int) -> tuple/bool:
+        # returns False if there are no flights from 'dep' airport
         # to 'arr' airport with at most 'layover' number of layovers
         # and if there are, then it returns a tuple with True and 
         # the minimum number of layovers needed
@@ -158,7 +159,7 @@ class aviation_data:
         # takes a matrix and returns a list
         # of tuples where the first element is the
         # departure airport, the second is arrival,
-        # and the third is the number of layovers + 1
+        # and the third is the number of layovers
         # if there is no connection between a pair of
         # airports then they wont be included in the list
  
@@ -172,12 +173,12 @@ class aviation_data:
         return outlist
 
     def connections(self, layover: int, upto=False, func=_connection_helper) -> list[tuple]:
-        # The documentation of the _connection_helper applies here too
+        # the documentation of the _connection_helper applies here too
         # as most of the job is done by the helper function
         # and this (connection) method mereley deals with different arguments
         # and is one of the methods of the class
 
-        # When upto is False it chech the connections between a pair of
+        # when upto is False it checks the connections between a pair of
         # airports with specifically that number of layovers
         # when it's True, then it gives the pairs that have upto that
         # number of layovers
