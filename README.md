@@ -9,7 +9,7 @@
 | ```_meth1``` | Creates a dictionary with all airports and assigns an index to each airport and an empty list | ```self``` |   N/A | ```dict``` |
 | ```meth2``` | Creates a dictionary with keys as indices and values as airports and returns it | ```self``` | N/A | ```dict``` |
 | ```connected_airports``` | Changes 0 to 1 if theres is a connection between a pair of airports and it's recorded in the airport info dictionary (airport connection does not depend on the number of flighs as long as there are(n't) any) | ```self``` | N/A | ```dict``` |
-| ```__str__``` | Prints the data | ``self``` | N/A | ```str``` |
+| ```__str__``` | Prints the data | ```self``` | N/A | ```str``` |
 | ```matrix``` | Uses connected_airport data to create an adjacency matrix, returns sympy matrix | ```self``` | N/A | ```sympy.Matrix``` |
 | ```__jordan_calulator``` | returns  P, J, P^-1 with M = P*J*P^-1 | ```self``` | N/A | ```tuple``` |
 | ```connections_bool``` | Returns ```False``` if there are no flights from ```dep (departing)``` airport to ```arr (arriving)``` airport with at most 'layover' number of layovers and if there are, then it returns a ```tuple``` with ```True``` and the minimum number of layovers needed | ```self```, ```dep```, ```arr```, ```layover``` | N/A | ```tuple/bool``` |
